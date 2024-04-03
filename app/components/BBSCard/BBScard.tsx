@@ -6,23 +6,20 @@ import {
   CardHeader,
   CardTitle,
 } from "@/app/components/BBSCard/Card";
+import { BBSData } from "@/app/types/types";
 import Link from "next/link";
 
-export const BBScard = () => {
+export const BBScard = ({ data }: { data: BBSData }) => {
+  const { title, content, createdAt, username, id } = data;
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Create project</CardTitle>
-        <CardDescription>Deploy your new project in one-click.</CardDescription>
+        <CardTitle>{title}</CardTitle>
+        <CardDescription>{username}</CardDescription>
       </CardHeader>
-      <CardContent>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis autem
-        impedit eligendi, aliquid, dolores quibusdam, totam repellat
-        necessitatibus sint veritatis harum recusandae deserunt cupiditate
-        voluptatibus consequatur provident voluptatem libero magnam.
-      </CardContent>
+      <CardContent>{content}</CardContent>
       <CardFooter className="flex justify-between">
-        <Link className="text-blue-500" href={"/bbs-posts/1"}>
+        <Link className="text-blue-500" href={`/bbs-posts/${id}`}>
           Read more
         </Link>
       </CardFooter>
