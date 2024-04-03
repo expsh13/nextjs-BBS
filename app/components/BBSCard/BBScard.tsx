@@ -5,7 +5,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/app/components/BBSCard/card";
+} from "@/app/components/BBSCard/Card";
 import Link from "next/link";
 
 export const BBScard = () => {
